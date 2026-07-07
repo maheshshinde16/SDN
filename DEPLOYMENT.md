@@ -93,7 +93,7 @@ CLAUDE_API_KEY=your_key docker-compose up
 
 ### Backend (.env)
 ```
-CLAUDE_API_KEY=sk-...
+CLAUDE_API_KEY=your_claude_api_key_here
 PORT=5000
 NODE_ENV=production
 FRONTEND_URL=https://your-frontend.vercel.app

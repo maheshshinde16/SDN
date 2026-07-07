@@ -6,7 +6,7 @@
 - [ ] Copy `.env.example` to `.env`
 - [ ] Add your Claude API key to `.env`
   ```
-  CLAUDE_API_KEY=sk-...
+  CLAUDE_API_KEY=your_claude_api_key_here
   PORT=5000
   NODE_ENV=development
   FRONTEND_URL=http://localhost:3000
@@ -41,7 +41,7 @@
   ```
 - [ ] Add environment variables to Railway:
   ```
-  CLAUDE_API_KEY=sk-...
+  CLAUDE_API_KEY=your_claude_api_key_here
   FRONTEND_URL=https://your-frontend-vercel-url
   ```
 
