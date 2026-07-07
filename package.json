@@ -1,0 +1,10 @@
+{
+  "name": "csv-importer",
+  "version": "1.0.0",
+  "description": "GrowEasy AI-powered CSV Importer",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}
