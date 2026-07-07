@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "";
 
 const apiClient = axios.create({
   baseURL: `${API_BASE_URL}/api`,
@@ -14,6 +14,7 @@ export interface UploadResponse {
   fileName: string;
   totalRows: number;
   preview: any[];
+  records: any[];
   columns: string[];
 }
 
@@ -42,8 +43,14 @@ export async function uploadCSV(file: File): Promise<UploadResponse> {
   return response.data;
 }
 
-export async function importCSV(fileId: string): Promise<ImportResponse> {
-  const response = await apiClient.post<ImportResponse>("/import", { fileId });
+export async function importCSV(
+  fileId: string,
+  records?: any[]
+): Promise<ImportResponse> {
+  const response = await apiClient.post<ImportResponse>("/import", {
+    fileId,
+    records,
+  });
   return response.data;
 }
 

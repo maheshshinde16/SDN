@@ -14,6 +14,7 @@ interface UploadState {
   fileName: string;
   totalRows: number;
   preview: any[];
+  records: any[];
   columns: string[];
 }
 
@@ -63,7 +64,7 @@ export default function Home() {
     setStep('processing');
 
     try {
-      const response = await importCSV(uploadState.fileId);
+      const response = await importCSV(uploadState.fileId, uploadState.records);
       setResultsState(response);
       setStep('results');
     } catch (err) {
@@ -100,7 +101,7 @@ export default function Home() {
         {!apiReady && (
           <div className="alert alert-error mb-6 flex items-center">
             <AlertCircle className="mr-2" />
-            <span>Backend API is not available. Please ensure the server is running on port 5000.</span>
+            <span>API is not available. Please check the deployment configuration.</span>
           </div>
         )}
 
